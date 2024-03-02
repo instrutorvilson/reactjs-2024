@@ -10,11 +10,15 @@ export default function Contador(){
         setCont(cont - 1)
      }
     return(
-        <div>
+        <div className="text-center">
             <h2>Contador</h2>
-            <label>Valor: {cont} </label>
-            <button onClick={add}>+</button>
-            <button onClick={dec}>-</button>
+            
+            <button className="btn btn-primary" onClick={add}>+</button>
+            <button className="btn btn-danger ms-3" onClick={dec}>-</button>
+          
+            <div className="mt-3">
+               <label>Valor: {cont} </label>
+            </div>
         </div>
     )
 }
