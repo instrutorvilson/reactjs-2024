@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Card from "./Card";
 
 function Cadastro() {
@@ -6,8 +6,31 @@ function Cadastro() {
     const[email, setEmail] = useState('')
     const[fone, setFone] = useState('')
     const[contato, setContato] = useState({nome: '',email:'',fone:'' })
+    const[erro, setErro] = useState('')
+    const inputRefNome = useRef(null)
+    const inputRefEmail = useRef(null)
+    const inputRefFone = useRef(null)
     
     function salvar(){
+        setErro('')
+        if(nome === ''){
+          setErro("O nome deve ser informado")
+          inputRefNome.current.focus()
+          return
+        }
+
+        if(email === ''){
+            setErro("O email deve ser informado")
+            inputRefEmail.current.focus()
+            return
+        }
+
+        if(fone === ''){
+            setErro("O fone deve ser informado")
+            inputRefFone.current.focus()
+            return
+        }
+
         setContato({nome, email, fone})
     }
     return (
@@ -21,6 +44,7 @@ function Cadastro() {
                   placeholder="EX: maria" 
                   value={nome}
                   onChange={event => setNome(event.target.value)}
+                  ref={inputRefNome}
                 />
             </div>
 
@@ -32,6 +56,7 @@ function Cadastro() {
                    placeholder="EX: maria@gmail.com" 
                    value={email}
                    onChange={event => setEmail(event.target.value)}
+                   ref={inputRefEmail}
                 />
             </div>
 
@@ -43,7 +68,11 @@ function Cadastro() {
                    placeholder="EX: (47) 9090-7060" 
                    value={fone}
                    onChange={event => setFone(event.target.value)}
+                   ref={inputRefFone}
                 />
+            </div>
+            <div>
+                {erro}
             </div>
             
             <div className="mt-3 d-flex justify-content-between">
