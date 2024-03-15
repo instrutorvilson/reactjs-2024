@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Consulta from './componentes/consulta'
 import Cadastro from './componentes/cadastro'
 import App from './App'
+import Edicao from './componentes/edicao'
 
 const router = createBrowserRouter(
   [
@@ -13,9 +14,11 @@ const router = createBrowserRouter(
       path:'/', element: <App />,
         children:[
             {path:'/cadastro', element: <Cadastro />},
-            {path:'/consulta', element: <Consulta />}
+            {path:'/consulta', element: <Consulta />},
+            {path:'/contato/:idContato', element: <Edicao />}            
             ]
-     }
+     },
+     
   ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

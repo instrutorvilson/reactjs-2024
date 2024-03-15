@@ -1,0 +1,16 @@
+{
+  "contatos": [
+    {
+      "id": "c628",
+      "nome": "Maria",
+      "email": "maria@gmail.com",
+      "fone": "(47)98851-1764"
+    },
+    {
+      "id": "f2be",
+      "nome": "Pedro",
+      "email": "pedro@gmail.com",
+      "fone": "(74)000-0000"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 export default function Consulta(){
     const [lista, setLista] = useState([]) //mantem o estado do componente
     useEffect(()=>{ consultar() },[]) //executado toda vez que o componente é inicializado, ou sofre alteraçaõ de estado
@@ -19,6 +20,7 @@ export default function Consulta(){
                      <th>Nome</th>
                      <th>Email</th>
                      <th>Fone</th>
+                     <th>Ações</th>
                    </tr>
                </thead>
              <tbody>
@@ -28,6 +30,7 @@ export default function Consulta(){
                    <td>{ct.nome}</td>
                    <td>{ct.email}</td>
                    <td>{ct.fone}</td>
+                   <td><Link to={`/contato/${ct.id}`}>Editar</Link></td>
                  </tr>) }
              </tbody>
            </table>
