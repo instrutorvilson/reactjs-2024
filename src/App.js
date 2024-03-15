@@ -1,7 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
-  return (
+   return (
     <div className="container">
            <h1 className="text-center">Nossa Agenda</h1>
             <nav>
@@ -13,7 +15,8 @@ function App() {
             </nav>
             <main>
                <Outlet />
-            </main>            
+            </main> 
+            <ToastContainer toastStyle={{fontSize:'14px', minHeight: '10px', borderRadius:'8px'}}/>          
         </div>
   );
 }
