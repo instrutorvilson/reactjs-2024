@@ -7,16 +7,19 @@ import Consulta from './componentes/consulta'
 import Cadastro from './componentes/cadastro'
 import App from './App'
 import Edicao from './componentes/edicao'
+import DadosCard from './componentes/dadosCard'
+
 
 const router = createBrowserRouter(
   [
      {
       path:'/', element: <App />,
         children:[
-            {path:'/cadastro', element: <Cadastro />},
-            {path:'/consulta', element: <Consulta />},
-            {path:'/contato/:idContato', element: <Edicao />}            
-            ]
+            { path:'/cadastro', element: <Cadastro /> },
+            { path:'/consulta', element: <Consulta /> },
+            { path:'/contato/:idcontato', element: <Edicao /> },
+            { path:'consultacards', element: <DadosCard />}           
+          ]
      },
      
   ])

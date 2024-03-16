@@ -20,7 +20,7 @@ export default function Consulta(){
                      <th>Nome</th>
                      <th>Email</th>
                      <th>Fone</th>
-                     
+                     <th>Ações</th>
                    </tr>
                </thead>
              <tbody>
@@ -29,8 +29,10 @@ export default function Consulta(){
                    <td>{ct.id}</td>
                    <td>{ct.nome}</td>
                    <td>{ct.email}</td>
-                   <td>{ct.fone}</td>
-                  
+                   <td>{ct.fone}</td> 
+                   <td>
+                    <Link to={`/contato/${ct.id}`}>editar</Link>
+                    </td>
                  </tr>) }
              </tbody>
            </table>
