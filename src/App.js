@@ -11,6 +11,7 @@ function App() {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/cadastro'>Cadastro</Link></li>
                     <li><Link to='/consulta'>Consulta</Link></li>
+                    <li><Link to='/dadoscard'>Cards</Link></li>
                 </ul>
             </nav>
             <main>
