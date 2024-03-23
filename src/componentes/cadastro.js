@@ -21,7 +21,6 @@ export default function Cadastro(){
     }
 
     useEffect(()=>{
-        console.log(localStorage.getItem('userLogado') === null)
         if(localStorage.getItem('userLogado') === null){
            {/*<Navigate to='login' />*/}
            navigate('../login')
