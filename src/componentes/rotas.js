@@ -14,8 +14,7 @@ export default function Rotas(){
                <Route path='componente1' element={<Component1 />}/>
                <Route path='componente2' element={<Component2 />}/>
                <Route path='componente3' element={<Component3 />}/>
-               <Route path='cadastro' element={<Cadastro />}/>
-               <Route path='cadastro/login' element={<Login />}/>
+               <Route path='cadastro' element={<Cadastro />}/>               
                <Route path='login' element={<Login />}/>
            </Routes>
          </BrowserRouter>

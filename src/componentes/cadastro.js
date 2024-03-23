@@ -24,7 +24,7 @@ export default function Cadastro(){
         console.log(localStorage.getItem('userLogado') === null)
         if(localStorage.getItem('userLogado') === null){
            {/*<Navigate to='login' />*/}
-           navigate('login')
+           navigate('../login')
         }
     },[])
 
