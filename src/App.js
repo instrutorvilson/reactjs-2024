@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Component1 from './componentes/componente1';
+import UserContext from './contextos/userContext';
+import { useState } from 'react';
+import Component3 from './componentes/componente3';
+import Component2 from './componentes/component2';
+import Rotas from './componentes/rotas';
 
 function App() {
+  const[nome, setNome] = useState('maria')
+  const[idade, setIdade] = useState(25)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{nome, idade}}>
+       {/* <Component3 />
+        <Component2 />
+        <Component1 />*/}
+        <Rotas />
+    </UserContext.Provider>
   );
 }
 
