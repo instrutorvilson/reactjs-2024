@@ -1,5 +1,5 @@
-export default function Consulta(){
-    return(
+export default function Consulta(props) {
+    return (
         <div>
             <table className="table">
                 <thead>
@@ -9,10 +9,15 @@ export default function Consulta(){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Maria</td>
-                        <td>maria@gmail.com</td>
-                    </tr>
+                    {
+                        props.dados.map(ct => {
+                            return (
+                            <tr>
+                                <td>{ct.nome}</td>
+                                <td>{ct.email}</td>
+                            </tr>)
+                        })
+                    }
                 </tbody>
             </table>
         </div>
