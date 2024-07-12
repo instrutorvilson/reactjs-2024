@@ -7,6 +7,8 @@ import Cardcontato from "./cardContato";
 export default function Cadastro() {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
+    const [contatoAlterar, setContatoAlterar] = useState(null)
+   
 
     const refNome = useRef(null)
     const refEmail = useRef(null)
@@ -24,6 +26,17 @@ export default function Cadastro() {
     {nome: 'teste', email:'teste@gmail.com'}
  ]*/}
 
+   function handleEditar(contato){
+      setNome(contato.nome)
+      setEmail(contato.email)
+      setContatoAlterar(contato)
+   }
+
+   function handleExcluir(contato){
+      let cts = contatos.filter(ct => ct.email != contato.email)
+      setContatos(cts)
+   }
+
     function gravar() {
         if (nome == '') {
             //alert('O nome deve ser informado')
@@ -38,8 +51,16 @@ export default function Cadastro() {
             return
         }
 
-        let novoContato = { nome, email }
-        setContatos([...contatos, novoContato])
+        if(contatoAlterar != null){
+          let updateContato = contatos.find(ct => ct.email == contatoAlterar.email) 
+          updateContato.nome = nome
+          updateContato.email = email
+          setContatoAlterar(null)
+        }else{
+            let novoContato = { nome, email }
+            setContatos([...contatos, novoContato])
+        }
+        
 
         setNome('')
         setEmail('')
@@ -82,7 +103,11 @@ export default function Cadastro() {
             <h2>Contato em cartões</h2>
             <div className="d-flex flex-wrap">
                 {
-                    contatos.map(ct => <Cardcontato contato={ct} />)
+                    contatos.map(ct => <Cardcontato 
+                        contato={ct} 
+                        onEditar={handleEditar} 
+                        onExcluir={handleExcluir}
+                        />)
                 }
             </div>
         </div>
