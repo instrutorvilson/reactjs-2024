@@ -1,0 +1,11 @@
+criar uma aplicação react padrão
+npx create-react-app my-app
+
+criar uma aplicação react usando typescript
+npx create-react-app app-aula2 --template typescript
+
+criar servidor 
+npm install -g json-server
+
+executar servidor
+npx json-server --watch db.json
