@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const linha = (item:any) => {
     return(
-        <tr>
+        <tr key={item.id}>
             <td>{item.id}</td>
             <td>{item.nome}</td>
             <td>{item.email}</td>
@@ -21,10 +22,14 @@ export default function Consulta(){
     },[])
 
     return(
-        <div>
-            <h2>Lista de contatos</h2>
+        <>
+        <header className="bg-primary p-3">
+            <h1 className="text-center text-white">Agenda</h1>
+        </header>
+        <div className="container">
+                      
             <hr />
-            <table>
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -38,7 +43,10 @@ export default function Consulta(){
                     }
                 </tbody>
             </table>
+            <hr />
+            <Link className="btn" to='/' >Home</Link>
+            <Link className="btn" to='/cadastro' >Cadastro</Link>
         </div>
-        
+      </>
     )
 }

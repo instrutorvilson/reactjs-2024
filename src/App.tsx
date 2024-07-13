@@ -1,14 +1,18 @@
 import './App.css'
 import Cadastro from './pages/cadastro';
 import Consulta from './pages/consulta'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './pages/home';
 
 function App() {
   return (
-    <div className="App">
-        <h1>Olá mundo</h1>
-        <Consulta />
-        <Cadastro />
-    </div>
+    <BrowserRouter>
+      <Routes>
+          <Route path='' element={<Home />}/>
+          <Route path='cadastro' element={<Cadastro />} />
+          <Route path='consulta' element={<Consulta />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
