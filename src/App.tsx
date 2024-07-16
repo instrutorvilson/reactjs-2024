@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LoginContext from './contextos/loginContext';
 import Cadastro from './pages/cadastro';
 import Consulta from './pages/consulta';
-import {TUser} from './types/tuser';
+import { TUser } from './types/tuser';
 import Login from './pages/login';
+import Rotas from './rotas/rotas';
 
 
 function App() {
@@ -17,9 +17,10 @@ function App() {
   
   return (
     <LoginContext.Provider value={{user, atualizaLogin}}>
-        <Cadastro />
+       {/* <Cadastro />
         <Consulta />
-        <Login />
+         <Login />*/}
+      <Rotas />
     </LoginContext.Provider>
   );
 }
