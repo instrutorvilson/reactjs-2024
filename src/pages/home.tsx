@@ -6,7 +6,7 @@ export default function Home() {
     useEffect(()=>{
         setIslogged(localStorage.getItem('userLogado') != null)
 
-    },[isLogged])
+    },[])
     
     return (
         <div>

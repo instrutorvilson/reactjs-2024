@@ -9,7 +9,7 @@ import ConsultaContatos from './pages/consultaContatos';
 import Info from './pages/info';
 import Login from './pages/login';
 import EditaContato from './pages/editaContato';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const routes = createBrowserRouter([
   {
@@ -26,25 +26,28 @@ const routes = createBrowserRouter([
 ])
 
 function App() {
-  const [isLogged, setIslogged] = useState(localStorage.getItem('userLogado') != null)
+  const [isLogged, setIslogged] = useState<boolean>()
    
+  useEffect(()=>{
+    setIslogged(localStorage.getItem('userLogado') != null)
+},[])
+
   return (
-   /* <BrowserRouter>
+   <BrowserRouter>
         <Routes>
            <Route path='' element={<Home /> } />
            <Route path='usuario/registrar' element={<CadUsuario />} />
            <Route path='usuario/login' element={<Login />} />
           
-           <Route path='contato/cadastrar' element={<CadUsuario />}/>
-           <Route path='contato/consultar' element={<ConsultaContatos />}/>
+          {/*} <Route path='contato/cadastrar' element={isLogged ? <CadContato /> : <Login/>}/>*/}
+           <Route path='contato/cadastrar' element={<CadContato /> }/>
+           <Route path='contato/consultar' element={isLogged ? <ConsultaContatos /> : <Login />}/>
 
            <Route path='contato/consultar/:id' element={<EditaContato />}/>
            <Route path='*' element={<Info />} />
         </Routes>
-    </BrowserRouter>*/
-    <>      
-      <RouterProvider router={routes}/>
-    </>
+    </BrowserRouter>
+    
   );
 }
 

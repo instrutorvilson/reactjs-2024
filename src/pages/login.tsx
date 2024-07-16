@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 interface TUser {
@@ -11,8 +11,15 @@ interface TUser {
 export default function Login(){
     const[email, setEmail] = useState('maria@gmail.com')
     const[senha, setSenha] = useState('123')
+     const refEmail = useRef<HTMLInputElement>(null)
 
     function logar(){
+        if(email == ''){
+          alert('O email deve ser informado')
+          refEmail.current?.focus()
+          return
+        }
+
         localStorage.removeItem('userLogado')
         fetch('http://localhost:3000/usuarios')
         .then(response => response.json())
@@ -32,6 +39,7 @@ export default function Login(){
             <div>
                 <label htmlFor="email">Informe email</label>
                 <input 
+                  ref={refEmail}
                   type="email" 
                   placeholder="Informe email"
                   className="form-control"
