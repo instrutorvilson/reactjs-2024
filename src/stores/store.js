@@ -4,9 +4,7 @@ import rotateReducer from "../reducers/rotateReducer";
 function configureStore(state = {
       rotating: true,  
       cor:'red', 
-      email:'maria@gmail.com',
-      perfil: '',
-      user:{ email:'joao@gmail.com'}
+      user:{ email:'', nome:'',perfil:''}
     }){
     return createStore(rotateReducer, state)
 }

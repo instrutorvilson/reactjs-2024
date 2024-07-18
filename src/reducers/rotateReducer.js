@@ -9,7 +9,7 @@ export default (state, action) => {
       case "alterarEmail":
             return { ...state, user: { ...state.user, email: action.payload } };
       case "logar":
-                return { email: action.payload.email, perfil: action.payload.perfil}
+                return { user: action.payload}
       default:
         return state  
    }

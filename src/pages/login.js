@@ -39,7 +39,8 @@ const Login = (props)=>{
             />
 
          <button onClick={verificarUser}>Logar</button>
-         <label>Perfil: {props.perfil}</label>
+         <label>Perfil: {props.user.perfil}</label>
+         <label>NOme: {props.user.nome}</label>
         </div>
     )
 }
