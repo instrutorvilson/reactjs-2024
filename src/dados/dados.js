@@ -1,0 +1,16 @@
+const users = [
+    {
+        nome: 'maria',
+        email: 'maria@gmail.com',
+        senha: '123',
+        perfil: 'GERENTE'
+    },
+    {
+        nome: 'joao',
+        email: 'joao@gmail.com',
+        senha: '123',
+        perfil: 'OPERADOR'
+    }
+]
+
+export default users
