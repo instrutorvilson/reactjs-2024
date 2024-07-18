@@ -5,7 +5,8 @@ function configureStore(state = {
       rotating: true,  
       cor:'red', 
       email:'maria@gmail.com',
-      perfil: ''
+      perfil: '',
+      user:{ email:'joao@gmail.com'}
     }){
     return createStore(rotateReducer, state)
 }

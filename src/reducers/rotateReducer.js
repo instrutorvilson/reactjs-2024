@@ -7,7 +7,7 @@ export default (state, action) => {
             return { cor: action.payload}
 
       case "alterarEmail":
-              return { email: action.payload}
+            return { ...state, user: { ...state.user, email: action.payload } };
       case "logar":
                 return { email: action.payload.email, perfil: action.payload.perfil}
       default:

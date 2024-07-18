@@ -26,7 +26,7 @@ const Login = (props)=>{
                className="form-control" 
                type="text" 
                placeholder="Informe email"
-               value={props.email}
+               value={props.user.email}
                onChange={e => props.mudaEmail(e.target.value)}
             />
             <label>Informe senha</label>
